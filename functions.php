@@ -24,14 +24,14 @@ function shutdownHandler()   //will be called when php script ends.
                     $error = "[SHUTDOWNHANDLER] lvl:" . $lasterror['type'] . " | msg:" . $lasterror['message'] . " | file:" . $lasterror['file'] . " | ln:" . $lasterror['line'];
                     //  echo '<p><b>'.$error.'</b></p>';
                     logError($error, "fatal");
-                    http_response_code(200);
+                    http_response_code(201);
                     return;
                 }
             default:
                 {
                     $error = "[SHUTDOWNHANDLER: Unknown Type ] LVL:" . $lasterror['type'] . " | msg:" . $lasterror['message'] . " | file:" . $lasterror['file'] . " | ln:" . $lasterror['line'];
                     logError($error, "fatal");
-                    http_response_code(200);
+                    http_response_code(201);
                     return;
                 }
         }
